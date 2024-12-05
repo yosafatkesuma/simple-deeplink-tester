@@ -49,7 +49,7 @@ export default function App() {
       />
       <div style={{ display: "flex", flexDirection: "column" }}>
         {items.map((item) => (
-          <a key={item.id} href={`${item.url}`}>
+          <a target="_blank" type="link" key={item.id} href={`${item.url}`}>
             {item.label}
           </a>
         ))}
