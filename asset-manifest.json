@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/simple-deeplink-tester/static/css/main.fc5c2c69.css",
-    "main.js": "/simple-deeplink-tester/static/js/main.6096d8ec.js",
+    "main.js": "/simple-deeplink-tester/static/js/main.b0c32055.js",
     "index.html": "/simple-deeplink-tester/index.html",
     "main.fc5c2c69.css.map": "/simple-deeplink-tester/static/css/main.fc5c2c69.css.map",
-    "main.6096d8ec.js.map": "/simple-deeplink-tester/static/js/main.6096d8ec.js.map"
+    "main.b0c32055.js.map": "/simple-deeplink-tester/static/js/main.b0c32055.js.map"
   },
   "entrypoints": [
     "static/css/main.fc5c2c69.css",
-    "static/js/main.6096d8ec.js"
+    "static/js/main.b0c32055.js"
   ]
 }
