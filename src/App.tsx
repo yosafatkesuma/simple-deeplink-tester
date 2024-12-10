@@ -37,16 +37,36 @@ export default function App() {
     { label: string; id: string; url: string }[]
   >([]);
 
+  React.useEffect(() => {
+    async function exec() {
+      try {
+        const deeplinks = await localStorage.getItem("deeplinks");
+        if (deeplinks) {
+          const convertDL = JSON.parse(deeplinks);
+          setItems(convertDL);
+        }
+      } catch (error) {
+        console.error(error);
+      }
+    }
+    if (typeof window !== "undefined") {
+      exec();
+    }
+  }, []);
+
+  const onChange = React.useCallback((value) => {
+    setItems((prev) => {
+      let tempValue: { label: string; id: string; url: string }[] = [];
+      tempValue = prev.concat(value);
+      localStorage.setItem("deeplinks", JSON.stringify(tempValue));
+      return tempValue;
+    });
+  }, []);
+
   return (
     <div className="App">
       <h1>Simple Deeplink Tester</h1>
-      <DeeplinkForm
-        onChange={(value) => {
-          setItems((prev) => {
-            return prev.concat(value);
-          });
-        }}
-      />
+      <DeeplinkForm onChange={onChange} />
       <div style={{ display: "flex", flexDirection: "column" }}>
         {items.map((item) => (
           <a target="_blank" type="link" key={item.id} href={`${item.url}`}>
